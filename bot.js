@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "Prefix";
+const prefix = "#";
 /////////////////////////
 ////////////////////////
 
@@ -312,14 +312,13 @@ function play(guild, song) {
 }
 
 
-
-const adminprefix = "Prefix";
-const devs = ['id'];
+const adminprefix = "#";
+const devs = ['367384433415946262'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix + 'play')) {
+if (message.content.startsWith(adminprefix + 'playing')) {
   client.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
